@@ -1,8 +1,10 @@
-var Behance=require('../behance');
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 /*Comment any one Example before run so that you can easily differentiate results. its your choice.*/
 //Example 1: without page argument
-Behance.behance.getCommentsFromProject('20100549',function(err,result){
+behance.getCommentsFromProject('20100549',function(err,result){
     if(err){
         console.log("Error: ",err);
     }
@@ -12,7 +14,7 @@ Behance.behance.getCommentsFromProject('20100549',function(err,result){
 });
 
 //Example 2: passing a page number
-Behance.behance.getCommentsFromProject('20100549',5,function(err,result){
+behance.getCommentsFromProject('20100549',5,function(err,result){
     if(err){
         console.log("Error: ",err);
     }

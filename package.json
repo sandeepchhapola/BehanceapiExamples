@@ -8,6 +8,6 @@
   "author": "sandeepchhapola",
   "license": "ISC",
   "dependencies": {
-    "behanceapi": "^1.0.3"
+    "behanceapi": "^1.1.1"
   }
 }

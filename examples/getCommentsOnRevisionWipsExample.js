@@ -1,8 +1,10 @@
-var Behance = require('../behance');
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 //Comment any one Example before run so that you can easily differentiate results. its your choice.
 //Example 1: without params argument
-Behance.behance.getCommentsOnRevisionWips('809623','1470565',function (err, result) {
+behance.getCommentsOnRevisionWips('809623','1470565',function (err, result) {
     if (err) {
         console.log("Error: ", err);
     }
@@ -12,7 +14,7 @@ Behance.behance.getCommentsOnRevisionWips('809623','1470565',function (err, resu
 });
 
 //Example 2:
-Behance.behance.getCommentsOnRevisionWips('809623','1470565',2,function (err, result) {
+behance.getCommentsOnRevisionWips('809623','1470565',2,function (err, result) {
     if (err) {
         console.log("Error: ", err);
     }

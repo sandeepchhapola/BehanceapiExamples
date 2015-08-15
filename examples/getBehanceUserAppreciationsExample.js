@@ -1,9 +1,10 @@
-var Behance = require('../behance');
-
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 /*Comment any one Example before run so that you can easily differentiate results. its your choice.*/
 //Example 1:
-Behance.behance.getBehanceUserAppreciations('449117',function (err, result) {
+behance.getBehanceUserAppreciations('449117',function (err, result) {
     if (err) {
         console.log("Error: ", err);
     }
@@ -13,7 +14,7 @@ Behance.behance.getBehanceUserAppreciations('449117',function (err, result) {
 });
 
 //Example 2:
-Behance.behance.getBehanceUserWips('449117',2,function(err,result){
+behance.getBehanceUserWips('449117',2,function(err,result){
     if(err){
         console.log("Error: ",err);
     }

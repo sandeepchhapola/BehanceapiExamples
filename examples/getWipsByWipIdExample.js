@@ -1,7 +1,9 @@
-var Behance = require('../behance');
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 //Get information about a work in progress.
-Behance.behance.getWipsByWipId('809623',function (err, user) {
+behance.getWipsByWipId('809623',function (err, user) {
     if (err) {
         console.log("Error: ", err);
     }

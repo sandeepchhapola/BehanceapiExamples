@@ -1,8 +1,10 @@
-var Behance=require('../behance');
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 /*Comment any one Example before run so that you can easily differentiate results. its your choice.*/
 //Example 1: without params argument
-Behance.behance.getProjects(function(err,result){
+behance.getProjects(function(err,result){
     if(err){
         console.log("Error: ",err);
     }
@@ -17,7 +19,8 @@ var params={
     page:2,
     fieldLimits:'illustration'
 };
-Behance.behance.getProjects(params,function(err,result){
+
+behance.getProjects(params,function(err,result){
     if(err){
         console.log("Error: ",err);
     }

@@ -1,7 +1,9 @@
-var Behance=require('../behance');
+var Behance = require('behanceapi')
+    , config = require('../config')
+    , behance = new Behance(config.keys.behance.client_id);
 
 //Retrieves all Creative Fields in two groups, all fields (in 'fields') and popular ones (in 'popular')
-Behance.behance.getAllCreativeFields(function(err,result){
+behance.getAllCreativeFields(function(err,result){
     if(err){
         console.log("Error: ",err);
     }
